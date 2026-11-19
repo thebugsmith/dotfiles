@@ -1,0 +1,8 @@
+xterm*faceName: Monospace
+xterm*faceSize: 12
+XTerm*Background: linen
+XTerm*Foreground: black
+XTerm*font: 9x15
+XTerm*saveLines: 1000
+XTerm*HiForeColor: white
+XTerm*HiBackColor: #c06077

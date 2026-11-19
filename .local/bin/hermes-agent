@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /home/cookie/.hermes/hermes-agent/.hermes/bin/hermes --run-module run_agent "$@"

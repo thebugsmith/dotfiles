@@ -1,0 +1,5 @@
+-- DuckDB Global Configuration
+SET threads = 16;
+SET memory_limit = '12GB';
+SET preserve_insertion_order = false;
+SET temp_directory = '/tmp/duckdb_temp';

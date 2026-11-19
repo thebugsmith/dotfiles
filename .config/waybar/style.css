@@ -1,0 +1,148 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 11px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+#window {
+    font-weight: bold;
+    font-family: "Ubuntu";
+}
+
+/* ===== GENERAL MODULE PADDING ===== */
+#workspaces, #pulseaudio, #backlight, #network, #bluetooth, #cpu, #memory, #battery, #tray, #clock {
+    padding: 0 6px;
+    margin: 0 2px;
+}
+
+/* ===== MODULES-LEFT ===== */
+/* Workspaces */
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-top: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+
+#workspaces button.active {
+    color: #77b1b1;
+}
+
+/* ===== MODULES-RIGHT (Left to Right order) ===== */
+/* Pulseaudio */
+#pulseaudio {
+    color: #ddfdff;
+}
+
+#pulseaudio.muted {
+    color: #888;
+}
+
+/* Backlight */
+#backlight {
+    color: #ddfdff;
+}
+
+/* Network */
+#network {
+    color: #ddfdff;
+}
+
+#network.disconnected {
+    color: red;
+}
+
+#network.wifi {
+    color: #a6e3a1;
+    text-shadow: 0 0 5px #a6e3a1;
+}
+
+/* Bluetooth */
+#bluetooth {
+    color: #89a8eb;
+}
+
+/* CPU */
+#cpu {
+    color: #ddfdff;
+}
+
+/* Memory */
+#memory {
+    color: #ddfdff;
+}
+
+/* Battery */
+#battery {
+    color: #fdf4e1;
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning {
+    animation: battery-blink 1s linear infinite alternate;
+}
+
+/* Tray */
+#tray {
+    padding: 0 4px;
+}
+
+/* Clock */
+#clock {
+    font-weight: bold;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+@keyframes battery-blink {
+    to { 
+        color: #f38ba8; 
+    }
+}
+
+/* ===== HOVER EFFECTS ===== */
+.modules-right > * {
+    transition: all 0.3s ease;
+}
+
+.modules-right > *:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* ===== LEGACY/UNUSED ===== */
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
