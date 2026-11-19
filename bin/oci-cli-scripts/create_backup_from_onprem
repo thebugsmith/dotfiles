@@ -1,6 +1,8 @@
-#!/home/cookie/lib/oracle-cli/bin/python3
-import sys
+#!/bin/sh
+# OCI CLI script: create_backup_from_onprem
+exec "${OCI_CLI_PYTHON:-$HOME/lib/oracle-cli/bin/python3}" -c 'import sys
 from oci_cli.scripts.database.dbaas import create_backup_from_onprem
-if __name__ == '__main__':
-    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+if __name__ == "__main__":
+    sys.argv[0] = sys.argv[0].removesuffix(".exe")
     sys.exit(create_backup_from_onprem())
+' "$@"

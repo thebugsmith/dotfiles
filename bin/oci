@@ -1,6 +1,8 @@
-#!/home/cookie/lib/oracle-cli/bin/python3
-import sys
+#!/bin/sh
+# OCI CLI launcher — uses the CLI's own venv interpreter
+exec "${OCI_CLI_PYTHON:-$HOME/lib/oracle-cli/bin/python3}" -c 'import sys
 from oci_cli.cli import cli
-if __name__ == '__main__':
-    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+if __name__ == "__main__":
+    sys.argv[0] = sys.argv[0].removesuffix(".exe")
     sys.exit(cli())
+' "$@"

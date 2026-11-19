@@ -1,1 +1,1 @@
-export PATH="/home/cookie/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

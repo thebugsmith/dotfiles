@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /home/cookie/.hermes/hermes-agent/.hermes/bin/hermes -p coder "$@"
+exec $HOME/.hermes/hermes-agent/.hermes/bin/hermes -p coder "$@"

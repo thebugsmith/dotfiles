@@ -5,7 +5,8 @@
 local terminal    = "kitty"
 local fileManager = "nautilus --new-window"
 local launcher    = "hyprlauncher"
-local binPath     = os.getenv("HOME") .. "/.apps/bin"
+local home        = os.getenv("HOME")
+local binPath     = home .. "/.apps/bin"
 local mainMod     = "SUPER"
 
 --==================--
@@ -19,7 +20,7 @@ hl.bind("ALT + space", hl.dsp.exec_cmd(launcher))
 
 -- Utilities
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("gnome-calculator"))
-hl.bind("ALT + X", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.apps/bin/wofi-emoji"))
+hl.bind("ALT + X", hl.dsp.exec_cmd(binPath .. "/wofi-emoji"))
 
 -- Firefox sites
 hl.bind("CTRL + ALT + Y", hl.dsp.exec_cmd("firefox -P jag -new-window https://youtube.com/"))
@@ -33,7 +34,7 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("firefox -P jag"))
 
 -- Wallpaper
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(binPath .. "/random_wall.sh"))
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("kitty /usr/bin/python3 /home/darthvader/.local/bin/waypaper"))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("kitty /usr/bin/python3 " .. home .. "/.local/bin/waypaper"))
 hl.bind("ALT + L", hl.dsp.exec_cmd("qs -c wallpaperPicker"))
 
 -- Clipboard manager
@@ -171,7 +172,7 @@ hl.bind("+ XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%
 
 -- System controls
 hl.bind("CONTROL + ALT + W", hl.dsp.exec_cmd("pkill waybar || waybar"))
-hl.bind("CONTROL + ALT + A", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.apps/bin/date_dunst.sh"))
+hl.bind("CONTROL + ALT + A", hl.dsp.exec_cmd(binPath .. "/date_dunst.sh"))
 
 -- Power management (suspend on lid switch)
 hl.bind("+ switch:on:Lid Switch", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })

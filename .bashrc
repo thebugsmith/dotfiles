@@ -12,7 +12,7 @@ PS1='[\u@\h \W]\$ '
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Added by Antigravity CLI installer
-export PATH="/home/cookie/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
 

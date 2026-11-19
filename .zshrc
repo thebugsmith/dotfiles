@@ -164,11 +164,14 @@ eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 
 # opencode
-export PATH=/home/cookie/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
 
-export PATH=/home/cookie/bin:$PATH
+export PATH="$HOME/bin:$PATH"
 
-[[ -e "/home/cookie/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/cookie/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh"
+for _oci_ac in "$HOME"/lib/oracle-cli/lib/python3.*/site-packages/oci_cli/bin/oci_autocomplete.sh; do
+  [[ -e $_oci_ac ]] && source "$_oci_ac" && break
+done
+unset _oci_ac
 
 case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
 
@@ -177,7 +180,7 @@ export REA_JADX_MCP_JAR="$HOME/.local/share/rea/android/jadx-headless-mcp-0.7.1-
 export JAVA_HOME="/usr/lib/jvm/default" # Adjust if your full JDK 17+ path differs
 
 # Added by Antigravity CLI installer
-export PATH="/home/cookie/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
